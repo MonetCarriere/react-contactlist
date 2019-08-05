@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import ListView from "./components/ListView";
-import SingleView from "./components/SingleView";
+import ListView from "./ListView";
+import SingleView from "./SingleView";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 

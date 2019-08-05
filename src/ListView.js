@@ -1,16 +1,17 @@
 import React from "react";
-import "../styles/ListView.css";
+// import "../styles/ListView.css";
 import { Link } from "react-router-dom";
-import { getAllUsers } from "../actions/users";
+import { getAllUsers } from "./actions/users";
+import  users from './randomUsers.json'
 
 class ListView extends React.Component {
   state = {
-    users: []
+    contacts: []
   };
 
   componentDidMount() {
     this.setState({
-      users: getAllUsers()
+      contacts: users
     });
   }
 
@@ -21,10 +22,10 @@ class ListView extends React.Component {
           <h1>My Contacts</h1>
         </header>
         <ul>
-          {this.state.users.map(user => (
+          {this.state.contacts.map(user => (
             <li key={"user-" + user.id}>
               <Link to={"/user/" + user.id}>
-                <img src={user.img} alt="pic" /> <span>{user.name}</span>
+                <img src={user.picture.thumbnail} alt="pic" /> <span>{user.name.first} {user.name.last}</span>
               </Link>
             </li>
           ))}
@@ -82,6 +83,6 @@ componentDidMount() {
             </div>
         )
     }
-*/}
+// */
 
-export default ListView
+// export default ListView
